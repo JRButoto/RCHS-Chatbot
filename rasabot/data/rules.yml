@@ -1,0 +1,23 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Say appointment_date anytime the user ask for appointment date
+  steps:
+  - intent: get_appointment_date
+  - action: utter_appointment_date
+
+- rule: Activate default fallback
+  steps:
+    - intent: nlu_fallback
+    - action: action_default_fallback

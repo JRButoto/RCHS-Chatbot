@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat with Rasa Bot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('/static/bot.png'); /* Ensure this path is correct */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end; /* Align everything to the right */
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #chat-wrapper {
+            margin-right: 20px; /* Add margin to the right side */
+        }
+        #chat-container {
+            background: rgba(255, 255, 255, 0.97);
+            width: 600px;
+            max-width: 100%;
+            height: 80vh;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        #chat-box {
+            flex: 1;
+            height: calc(80vh - 80px);
+            overflow-y: auto;
+            padding: 20px;
+            border-bottom: 1px solid #ccc;
+        }
+        .message {
+            padding: 10px 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+            max-width: 70%;
+            word-wrap: break-word;
+        }
+        .user-message {
+            background: #007bff;
+            color: #fff;
+            align-self: flex-end;
+            margin-left: auto;
+        }
+        .bot-message {
+            background: #bbbbbd;
+            color: #333;
+            align-self: flex-start;
+            margin-right: auto;
+        }
+        #input-box {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+        #chat-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            outline: none;
+        }
+        #send-button {
+            padding: 10px 20px;
+            margin-left: 10px;
+            background: #007bff;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 20px;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="chat-wrapper">
+        <div id="chat-container">
+            <div id="chat-box"></div>
+            <div id="input-box">
+                <input type="text" id="chat-input" placeholder="Type your message here..." />
+                <button id="send-button">Send</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#send-button').click(function() {
+                sendMessage();
+            });
+
+            $('#chat-input').keypress(function(event) {
+                if (event.which === 13) {
+                    sendMessage();
+                }
+            });
+
+            function sendMessage() {
+                let userMessage = $('#chat-input').val();
+                if (userMessage.trim() === '') return;
+
+                // Append user's message to the chatbox
+                $('#chat-box').append(`<div class="message user-message">${userMessage}</div>`);
+
+                // Send user message to the server and get bot's response
+                $.ajax({
+                    type: "POST",
+                    url: "/webhook",
+                    contentType: "application/json",
+                    data: JSON.stringify({ message: userMessage }),
+                    success: function(data) {
+                        let botResponse = data.response || 'No response from bot';
+                        // Append bot's response to the chatbox
+                        $('#chat-box').append(`<div class="message bot-message">${botResponse}</div>`);
+                        $('#chat-input').val(''); // Clear the input field
+                        // Scroll to the bottom of the chatbox
+                        $('#chat-box').scrollTop($('#chat-box')[0].scrollHeight);
+                    },
+                    error: function() {
+                        // Handle error if needed
+                        $('#chat-box').append(`<div class="message bot-message">Error communicating with the server</div>`);
+                        // Scroll to the bottom of the chatbox
+                        $('#chat-box').scrollTop($('#chat-box')[0].scrollHeight);
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
