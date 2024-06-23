@@ -35,45 +35,55 @@ stories:
   - action: utter_greet
 
 
-- story: get appointment path
+# - story: get appointment path
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: get_appointment_date
+#   - action: utter_appointment_date
+#   - intent: affirm
+#   - action: utter_goodbye
+
+- story: interactive_story_1
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: get_appointment_date
-  - action: utter_appointment_date
+  - intent: nlu_fallback
+  - action: action_default_fallback
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: nlu_fallback
+  - action: action_default_fallback
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: nlu_fallback
+  - action: action_default_fallback
+  - intent: nlu_fallback
+  - action: action_default_fallback
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: nlu_fallback
+  - action: action_default_fallback
+  - intent: nlu_fallback
+  - action: action_default_fallback
+  - intent: nlu_fallback
+  - action: action_default_fallback
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
   - intent: affirm
-  - action: utter_goodbye
-
-- story: interactive_story_1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: nlu_fallback
-  - action: action_default_fallback
-
-- story: interactive_story_1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: nlu_fallback
-  - action: action_default_fallback
-
-- story: interactive_story_1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: nlu_fallback
-  - action: action_default_fallback
-  - intent: nlu_fallback
-  - action: action_default_fallback
-
-- story: interactive_story_1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: nlu_fallback
-  - action: action_default_fallback
-  - intent: nlu_fallback
-  - action: action_default_fallback
-  - intent: nlu_fallback
-  - action: action_default_fallback
+  - action: utter_happy

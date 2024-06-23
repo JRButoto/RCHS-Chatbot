@@ -83,14 +83,9 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
-- intent: get_appointment_date
-  examples: |
-    - What is my next appointment
-    - Appointment date for Adam id 223
 - intent: nlu_fallback
   examples: |
     - sorry, I didn't understand that
     - could you rephrase?
     - I'm not sure what you mean
     - what is a baby
-    - what  is a baby

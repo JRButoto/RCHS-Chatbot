@@ -3,7 +3,6 @@ intents:
 - affirm
 - bot_challenge
 - deny
-- get_appointment_date
 - goodbye
 - greet
 - mood_great
@@ -23,11 +22,12 @@ responses:
   - text: Bye
   utter_iamabot:
   - text: I am a bot, powered by Rasa.
-  utter_appointment_date:
-  - text: Date of Adam's appointment is 22-04-2024
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 actions:
 - utter_greet
+- utter_happy
+- utter_cheer_up
+- utter_did_that_help
 - action_default_fallback

@@ -12,10 +12,10 @@ rules:
   - intent: bot_challenge
   - action: utter_iamabot
 
-- rule: Say appointment_date anytime the user ask for appointment date
-  steps:
-  - intent: get_appointment_date
-  - action: utter_appointment_date
+# - rule: Say appointment_date anytime the user ask for appointment date
+#   steps:
+#   - intent: get_appointment_date
+#   - action: utter_appointment_date
 
 - rule: Activate default fallback
   steps:
