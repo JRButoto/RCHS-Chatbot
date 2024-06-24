@@ -1,0 +1,6 @@
+[
+  {
+    "name": "registration_number",
+    "pattern": "\\b\\d{10}\\b"
+  }
+]

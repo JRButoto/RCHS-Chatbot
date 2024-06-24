@@ -89,3 +89,41 @@ nlu:
     - could you rephrase?
     - I'm not sure what you mean
     - what is a baby
+- intent: get_nutritional_recommendations
+  examples: |
+    - I want recommendations for my 1 year old child
+    - What should I feed my 2 year old to ensure proper nutrition?
+    - Can you give me nutritional advice for my 3 year old?
+    - What are the best foods for my 4 year old?
+    - Suggest a diet plan for my 5 year old
+    - What should a breastfeeding mother eat for healthy milk production?
+    - Can you recommend a diet for a breastfeeding mom?
+    - What foods should I avoid while breastfeeding?
+    - What can I eat to improve the quality of my breast milk?
+    - Give me tips on nutrition for a breastfeeding mother
+    - What are good foods for my 1 year old child?
+    - How can I ensure my 2 year old gets all necessary nutrients?
+    - What meals should I prepare for my 3 year old?
+    - What should my 4 year old be eating daily?
+    - Provide me with nutritional advice for a 5 year old child
+- intent: giving_registration_number
+  examples: |
+    - Sure, my child's registration number is [1234567890](registration_number).
+    - Here's the registration number: [1234567890](registration_number).
+    - The registration number is [1234567890](registration_number).
+    - You can use this number: [1234567890](registration_number).
+    - My child's ID is [1234567890](registration_number)
+    - It's [1234567890](registration_number).
+    - [1234567890] (registration_number)
+    - I found the registration number: [1234567890](registration_number)
+    - It's on the card, [1234567890] (registration_number)
+    - Here it is! [1234567890] (registration_number)
+    - No problem, it's [1234567890] (registration_number)
+    - I have it right here: [1234567890] (registration_number)
+    - Let me see... oh, it's [1234567890] (registration_number)
+    - Found it! The number is [1234567890] (registration_number)
+    - [1234567890](registration_number)
+    - [2143658709](registration_number)
+- regex: registration_number
+  examples: |
+    - \b\d{10}\b

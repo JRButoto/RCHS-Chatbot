@@ -87,3 +87,35 @@ stories:
   - action: utter_did_that_help
   - intent: affirm
   - action: utter_happy
+
+
+- story: Giving_nutrition_recommendations
+  steps:
+  - intent: get_nutritional_recommendations
+  - action: utter_ask_registration_number
+  - intent: giving_registration_number
+    entities:
+      - registration_number: registration_number
+  - action: action_handle_registration_number
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: get_nutritional_recommendations
+  - action: utter_ask_registration_number
+  - intent: giving_registration_number
+    entities:
+    - registration_number: '1234567890'
+  - action: action_handle_registration_number
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: get_nutritional_recommendations
+  - action: utter_ask_registration_number
+  - intent: giving_registration_number
+    entities:
+    - registration_number: '2143658709'
+  - action: action_handle_registration_number

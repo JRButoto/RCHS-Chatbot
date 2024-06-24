@@ -28,7 +28,7 @@
 
 
 from typing import Any, Text, Dict, List
-
+from rasa_sdk.events import SlotSet
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import UserUtteranceReverted
@@ -76,6 +76,35 @@ class ActionDefaultFallback(Action):
         except Exception as e:
             print(f"Error: {e}")
             dispatcher.utter_message(text="Samahani, kuna tatizo na mfumo wetu. Tafadhali jaribu tena baadaye.")
+
+        return []
+
+
+
+
+
+class ActionHandleRegistrationNumber(Action):
+
+    def name(self) -> Text:
+        return "action_handle_registration_number"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        registration_number = tracker.get_slot('registration_number')
+        if not registration_number:
+            dispatcher.utter_message(text="I couldn't find the registration number in your message.")
+            return []
+
+        response = requests.post("http://127.0.0.1:8000/api/get_child_nutrition_recomendations/", json={"registration_number": registration_number})
+
+        if response.status_code == 200:
+            message = response.json().get('message', 'No message received.')
+            dispatcher.utter_message(text=message)
+        else:
+            error_message = response.json().get('error', 'Something went wrong while fetching the health status.')
+            dispatcher.utter_message(text=error_message)
 
         return []
 

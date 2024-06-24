@@ -21,3 +21,15 @@ rules:
   steps:
     - intent: nlu_fallback
     - action: action_default_fallback
+
+
+
+# - rule: Giving nutrition recommendations
+#   steps:
+#   - intent: get_nutritional_recommendations
+#   - action: utter_ask_registration_number
+#   - intent: giving_registration_number
+#     entities:
+#       - registration_number: registration_number
+#   - action: utter_handle_registration_number
+
