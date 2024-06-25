@@ -81,8 +81,6 @@ class ActionDefaultFallback(Action):
 
 
 
-
-
 class ActionHandleRegistrationNumber(Action):
 
     def name(self) -> Text:
@@ -107,6 +105,37 @@ class ActionHandleRegistrationNumber(Action):
             dispatcher.utter_message(text=error_message)
 
         return []
+    
+
+
+# actions.py
+
+class ActionHandleRegistrationNumberForVisit(Action):
+
+    def name(self) -> Text:
+        return "action_handle_registration_number_for_visit"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        registration_number = tracker.get_slot('registration_number')
+
+        if registration_number:
+            response = requests.post('http://127.0.0.1:8000/api/get_next_visit/', json={'registration_number': registration_number})
+
+            if response.status_code == 200:
+                message = response.json().get('message', 'No message received.')
+                dispatcher.utter_message(text=message)
+            else:
+                error_message = response.json().get('error', 'Something went wrong while fetching the next visit date.')
+                dispatcher.utter_message(text=error_message)
+
+        else:
+            dispatcher.utter_message(text="I couldn't find the registration number.")
+
+        return []
+
 
 
 

@@ -126,6 +126,8 @@ nlu:
     - [173652098413756](registration_number)
     - [123456789012345](registration_number)
     - [768594031209876](registration_number)
+    - [198765432112345](registration_number)
+    - [198765432112345](registration_number)
 - intent: get_next_visit
   examples: |
     - When is my child's next visit?

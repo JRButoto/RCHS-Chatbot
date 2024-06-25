@@ -4,7 +4,7 @@ digraph  {
 1 [class=active, fontsize=12, label=action_session_start];
 2 [class=active, fontsize=12, label=utter_greet];
 3 [class=active, fontsize=12, label=utter_ask_registration_number_for_visit];
-4 [class=active, fontsize=12, label=utter_handle_registration_number_for_visit];
+4 [class=active, fontsize=12, label=action_handle_registration_number_for_visit];
 5 [class="intent dashed active", label="  ?  ", shape=rect];
 6 [class="intent active", fillcolor=lightblue, label="/greet", shape=rect, style=filled];
 7 [class="intent active", fillcolor=lightblue, label="/get_next_visit", shape=rect, style=filled];
