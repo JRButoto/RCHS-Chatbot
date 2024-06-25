@@ -3,6 +3,7 @@ intents:
 - affirm
 - bot_challenge
 - deny
+- get_next_visit
 - get_nutritional_recommendations
 - giving_registration_number
 - goodbye
@@ -16,9 +17,8 @@ slots:
   registration_number:
     type: float
     mappings:
-      - type: from_entity
-        entity: registration_number
-
+    - type: from_entity
+      entity: registration_number
 responses:
   utter_greet:
   - text: Hello! what can I do for you?
@@ -26,11 +26,13 @@ responses:
     - title: Nutritional recomendations
       payload: /get_nutritional_recommendations
     - title: Next visit date
-      payload: /mood_sad
+      payload: /get_next_visit
   utter_ask_registration_number:
-  - text: I need to know your child's registrattion number so that I can give you an appropriate recommendation.
-  utter_handle_registration_number:
-  - text: here is the recommendation.
+  - text: Provide your child's registration number so that I can give you an appropriate recommendation.
+  utter_ask_registration_number_for_visit:
+  - text: Provide your registration number or your child's registration number so that I can give you the scheduled next visit.
+  utter_handle_registration_number_for_visit:
+  - text: here is the next visit date.
   utter_cheer_up:
   - text: 'Here is something to cheer you up:'
     image: https://i.imgur.com/nGF1K8f.jpg
@@ -46,10 +48,11 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 actions:
-- action_handle_registration_number
+- utter_ask_registration_number_for_visit
 - utter_greet
+- utter_handle_registration_number_for_visit
+- action_handle_registration_number
 - utter_ask_registration_number
-- utter_handle_registration_number
 - utter_happy
 - utter_cheer_up
 - utter_did_that_help

@@ -108,22 +108,42 @@ nlu:
     - Provide me with nutritional advice for a 5 year old child
 - intent: giving_registration_number
   examples: |
-    - Sure, my child's registration number is [1234567890](registration_number).
-    - Here's the registration number: [1234567890](registration_number).
-    - The registration number is [1234567890](registration_number).
-    - You can use this number: [1234567890](registration_number).
-    - My child's ID is [1234567890](registration_number)
-    - It's [1234567890](registration_number).
-    - [1234567890] (registration_number)
-    - I found the registration number: [1234567890](registration_number)
-    - It's on the card, [1234567890] (registration_number)
-    - Here it is! [1234567890] (registration_number)
-    - No problem, it's [1234567890] (registration_number)
-    - I have it right here: [1234567890] (registration_number)
-    - Let me see... oh, it's [1234567890] (registration_number)
-    - Found it! The number is [1234567890] (registration_number)
-    - [1234567890](registration_number)
-    - [2143658709](registration_number)
+    - Sure, my child's registration number is [672387065279148](registration_number).
+    - Here's the registration number: [982374105639187](registration_number).
+    - The registration number is [531987620451329](registration_number).
+    - You can use this number: [712546089374216](registration_number).
+    - My child's ID is [309852147603984](registration_number)
+    - It's [168420739512843](registration_number).
+    - [420135698741205] (registration_number)
+    - I found the registration number: [893710256489732](registration_number)
+    - It's on the card, [256103987421569] (registration_number)
+    - Here it is! [674210839564130] (registration_number)
+    - No problem, it's [019385274610325] (registration_number)
+    - I have it right here: [387125690432178] (registration_number)
+    - Let me see... oh, it's [541098632751409] (registration_number)
+    - Found it! The number is [920374168539027] (registration_number)
+    - [574380186429731](registration_number)
+    - [173652098413756](registration_number)
+    - [123456789012345](registration_number)
+    - [768594031209876](registration_number)
+- intent: get_next_visit
+  examples: |
+    - When is my child's next visit?
+    - Can you tell me the date for the next appointment?
+    - When do we need to come back for the next check-up?
+    - What's the date of our next visit?
+    - When is the follow-up visit scheduled?
+    - Can you remind me of our next appointment?
+    - When should I bring my child for the next visit?
+    - When is the next scheduled check-up?
+    - Can you tell me when the next visit is?
+    - When is our next healthcare appointment?
+    - When do we need to come in again?
+    - What's the date for the next visit?
+    - Can you provide the date for the next appointment?
+    - When is the next follow-up visit?
+    - When is the next time we need to come in?
+    - when is my next visit
 - regex: registration_number
   examples: |
-    - \b\d{10}\b
+    - \b\d{15}\b

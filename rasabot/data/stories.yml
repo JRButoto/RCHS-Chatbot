@@ -98,6 +98,15 @@ stories:
       - registration_number: registration_number
   - action: action_handle_registration_number
 
+- story: Giving_next_visit
+  steps:
+  - intent: get_next_visit
+  - action: utter_ask_registration_number_for_visit
+  - intent: giving_registration_number
+    entities:
+      - registration_number: registration_number
+  - action: utter_handle_registration_number_for_visit
+
 - story: interactive_story_1
   steps:
   - intent: greet
@@ -106,7 +115,7 @@ stories:
   - action: utter_ask_registration_number
   - intent: giving_registration_number
     entities:
-    - registration_number: '1234567890'
+    - registration_number: '123456789012345'
   - action: action_handle_registration_number
 
 - story: interactive_story_1
@@ -117,5 +126,53 @@ stories:
   - action: utter_ask_registration_number
   - intent: giving_registration_number
     entities:
-    - registration_number: '2143658709'
+    - registration_number: '214365870912345'
   - action: action_handle_registration_number
+
+- story: interactive_story_1
+  steps:
+  - intent: giving_registration_number
+    entities:
+    - registration_number: '123456789012345'
+  - slot_was_set:
+    - registration_number: '123456789012345'
+  - action: utter_handle_registration_number_for_visit
+  
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: get_next_visit
+  - action: utter_ask_registration_number_for_visit
+  - intent: giving_registration_number
+    entities:
+    - registration_number: '123456789012345'
+  - action: utter_handle_registration_number_for_visit
+
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: get_next_visit
+  - action: utter_ask_registration_number_for_visit
+  - intent: giving_registration_number
+    entities:
+    - registration_number: '123456789012345'
+  - slot_was_set:
+    - registration_number: '123456789012345'
+  - action: utter_handle_registration_number_for_visit
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: get_next_visit
+  - action: utter_ask_registration_number_for_visit
+  - intent: giving_registration_number
+    entities:
+    - registration_number: '768594031209876'
+  - slot_was_set:
+    - registration_number: '768594031209876'
+  - action: utter_handle_registration_number_for_visit
