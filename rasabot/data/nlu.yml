@@ -89,6 +89,56 @@ nlu:
     - could you rephrase?
     - I'm not sure what you mean
     - what is a baby
+    - what is networking
+    - suggest hygiene
+    - tell me about artificial intelligence
+    - explain cloud computing
+    - what do you know about machine learning?
+    - how does blockchain work?
+    - can you tell me about data science?
+    - what is the Internet of Things?
+    - how does quantum computing work?
+    - can you explain big data?
+    - what is cryptocurrency?
+    - tell me about cyber security
+    - explain virtual reality
+    - what is augmented reality?
+    - how does deep learning work?
+    - what is natural language processing?
+    - tell me about robotics
+    - what do you know about bioinformatics?
+    - how does genetic engineering work?
+    - explain neural networks
+    - what is 5G technology?
+    - tell me about smart cities
+    - what is edge computing?
+    - what is the ketogenic diet?
+    - can you explain intermittent fasting?
+    - what are the benefits of a plant-based diet?
+    - how does the paleo diet work?
+    - what is the DASH diet?
+    - tell me about the Mediterranean diet
+    - what are the symptoms of diabetes?
+    - how do you prevent heart disease?
+    - can you explain the importance of fiber?
+    - what are the benefits of probiotics?
+    - how does gluten affect the body?
+    - what are the signs of a vitamin D deficiency?
+    - how do you manage high blood pressure?
+    - what are the effects of caffeine on health?
+    - can you explain the concept of superfoods?
+    - what are the health benefits of antioxidants?
+    - how does sugar impact the body?
+    - what are the best sources of omega-3 fatty acids?
+    - how does dehydration affect health?
+    - what are the risks of high cholesterol?
+    - can you explain the role of protein in the diet?
+    - what are the benefits of regular exercise?
+    - how does sleep affect overall health?
+    - what are the causes of obesity?
+    - how can you improve mental health through diet?
+    - what are the effects of alcohol on the body?
+
 - intent: get_nutritional_recommendations
   examples: |
     - I want recommendations for my 1 year old child

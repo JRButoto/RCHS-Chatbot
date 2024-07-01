@@ -62,7 +62,7 @@ class ActionDefaultFallback(Action):
             response = client.chat.completions.create(
                 model="gpt-3.5-turbo",
                 messages=[
-                    {"role": "system", "content": "Assist parents, mainly mothers, with nutritional advice for themselves and their children under 5 years. Keep responses short, concise and quota-saving. Respond only in Swahili."},
+                    {"role": "system", "content": "Assist parents, mainly mothers, with nutritional advice for themselves and their children under 5 years. Keep responses short, concise and quota-saving. Respond only in simple english."},
                     {"role": "user", "content": user_message}
                 ]
             )
@@ -75,8 +75,8 @@ class ActionDefaultFallback(Action):
 
         except Exception as e:
             print(f"Error: {e}")
-            dispatcher.utter_message(text="Samahani, kuna tatizo na mfumo wetu. Tafadhali jaribu tena baadaye.")
-
+            dispatcher.utter_message(text="Sorry there is an issue with the system. Please try again later.")
+# Samahani, kuna tatizo na mfumo wetu. Tafadhali jaribu tena baadaye.
         return []
 
 
