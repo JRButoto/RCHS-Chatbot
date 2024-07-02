@@ -55,5 +55,5 @@ def webhook():
     return jsonify(bot_response)
 
 if __name__ == "__main__":
-    app.run(debug=True, port=3000)
+    app.run(debug=True, port=3100, host='0.0.0.0')
 
