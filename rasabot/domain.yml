@@ -23,7 +23,7 @@ responses:
   utter_greet:
   - text: Hello! what can I do for you?
     buttons:
-    - title: Nutritional recomendations
+    - title: Nutritional recommendations
       payload: /get_nutritional_recommendations
     - title: Next visit date
       payload: /get_next_visit

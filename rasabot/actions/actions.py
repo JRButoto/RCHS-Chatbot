@@ -95,7 +95,7 @@ class ActionHandleRegistrationNumber(Action):
             dispatcher.utter_message(text="I couldn't find the registration number in your message.")
             return []
 
-        response = requests.post("http://127.0.0.1:8000/api/get_child_nutrition_recomendations/", json={"registration_number": registration_number})
+        response = requests.post("http://100.42.178.17:8800/api/get_child_nutrition_recomendations/", json={"registration_number": registration_number})
 
         if response.status_code == 200:
             message = response.json().get('message', 'No message received.')
@@ -122,7 +122,7 @@ class ActionHandleRegistrationNumberForVisit(Action):
         registration_number = tracker.get_slot('registration_number')
 
         if registration_number:
-            response = requests.post('http://127.0.0.1:8000/api/get_next_visit/', json={'registration_number': registration_number})
+            response = requests.post('http://100.42.178.17:8800/api/get_next_visit/', json={'registration_number': registration_number})
 
             if response.status_code == 200:
                 message = response.json().get('message', 'No message received.')
