@@ -138,7 +138,6 @@ nlu:
     - what are the causes of obesity?
     - how can you improve mental health through diet?
     - what are the effects of alcohol on the body?
-
 - intent: get_nutritional_recommendations
   examples: |
     - I want recommendations for my 1 year old child
@@ -177,7 +176,7 @@ nlu:
     - [123456789012345](registration_number)
     - [768594031209876](registration_number)
     - [198765432112345](registration_number)
-    - [198765432112345](registration_number)
+    - [123456789012345](registration_number)
 - intent: get_next_visit
   examples: |
     - When is my child's next visit?

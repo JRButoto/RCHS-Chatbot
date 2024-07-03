@@ -46,11 +46,11 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 actions:
-- action_handle_registration_number_for_visit
-- utter_ask_registration_number_for_visit
-- utter_greet
 - action_handle_registration_number
 - utter_ask_registration_number
+- utter_greet
+- action_handle_registration_number_for_visit
+- utter_ask_registration_number_for_visit
 - utter_happy
 - utter_cheer_up
 - utter_did_that_help

@@ -3,11 +3,11 @@ digraph  {
 "-1" [class=end, fillcolor=red, fontsize=12, label=END, style=filled];
 1 [class=active, fontsize=12, label=action_session_start];
 2 [class=active, fontsize=12, label=utter_greet];
-3 [class=active, fontsize=12, label=utter_ask_registration_number_for_visit];
-4 [class=active, fontsize=12, label=action_handle_registration_number_for_visit];
+3 [class=active, fontsize=12, label=utter_ask_registration_number];
+4 [class=active, fontsize=12, label=action_handle_registration_number];
 5 [class="intent dashed active", label="  ?  ", shape=rect];
 6 [class="intent active", fillcolor=lightblue, label="/greet", shape=rect, style=filled];
-7 [class="intent active", fillcolor=lightblue, label="/get_next_visit", shape=rect, style=filled];
+7 [class="intent active", fillcolor=lightblue, label="/get_nutritional_recommendations", shape=rect, style=filled];
 8 [class="intent active", fillcolor=lightblue, label="/giving_registration_number", shape=rect, style=filled];
 0 -> "-1"  [class="", key=NONE, label=""];
 0 -> 1  [class=active, key=NONE, label=""];

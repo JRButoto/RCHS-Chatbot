@@ -202,3 +202,16 @@ stories:
   - slot_was_set:
     - registration_number: '198765432112345'
   - action: action_handle_registration_number_for_visit
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: get_nutritional_recommendations
+  - action: utter_ask_registration_number
+  - intent: giving_registration_number
+    entities:
+    - registration_number: '123456789012345'
+  - slot_was_set:
+    - registration_number: '123456789012345'
+  - action: action_handle_registration_number
